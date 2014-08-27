@@ -1,4 +1,4 @@
-package com.db.model;
+package com.db.model.impl;
 
 import java.sql.Timestamp;
 
@@ -7,11 +7,18 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+import com.db.model.BaseEntity;
+
 
 /**
  * 数据库实体类：角色信息，暂时先放在这儿
  * @author Thinker
  */
+@Scope("prototype")
+@Component
 @Entity
 @Table(name = "t_human_info")
 public class HumanEntity implements BaseEntity<Long>

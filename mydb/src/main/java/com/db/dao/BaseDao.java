@@ -1,10 +1,10 @@
 package com.db.dao;
 
 import java.io.Serializable;
-import java.sql.SQLException;
-import java.util.Collections;
+import java.util.Collection;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -143,6 +143,34 @@ public abstract class BaseDao<E extends BaseEntity<?>>
 		} else 
 		{
 			return (E)currentSession().get(this.getEntityClazz(), ID);
+		}
+	}
+	
+	/**
+	 * 根据主键获取一个实体
+	 * 
+	 * @param ID
+	 * @return 
+	 * @throws DataAccessException 
+	 * @see {@link DBService#get(Class, java.io.Serializable)}
+	 * 
+	 */
+	public List<E> getAll(String hsql,final String[] paramNames, final Object[] values)
+	{
+		Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery(hsql);
+        prepareQuery(paramNames,values,query);
+        return query.list();
+	}
+	
+	private void prepareQuery(final String[] paramNames, final Object[] values,
+			Query query) {
+		for (int i = 0; paramNames != null && i < paramNames.length; i++) {
+			if (values[i] instanceof Collection) {
+				query.setParameterList(paramNames[i], (Collection<?>)values[i]);
+			} else {
+				query.setParameter(paramNames[i], values[i]);
+			}
 		}
 	}
 
