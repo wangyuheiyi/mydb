@@ -4,9 +4,11 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -39,10 +41,6 @@ public class HumanEntity implements BaseEntity<Long>
 	private int allianceTypeId;
 	/** 玩家的战功 */
 	private int exploit;
-	/** vip等级 */
-	private int vipLevel;
-	/** 最后成为某级别vip的时间 */
-	private Timestamp lastVipTime;
 	/** 钻石 */
 	private int diamond;
 	/** 金币 */
@@ -166,23 +164,7 @@ public class HumanEntity implements BaseEntity<Long>
 	public void setExploit(int exploit) {
 		this.exploit = exploit;
 	}
-	@Column(columnDefinition = " int default 0", nullable = false)
-	public int getVipLevel() {
-		return vipLevel;
-	}
 
-	public void setVipLevel(int vipLevel) {
-		this.vipLevel = vipLevel;
-	}
-	
-	@Column
-	public Timestamp getLastVipTime() {
-		return lastVipTime;
-	}
-
-	public void setLastVipTime(Timestamp lastVipTime) {
-		this.lastVipTime = lastVipTime;
-	}
 	
 	public int getDiamond() {
 		return diamond;
