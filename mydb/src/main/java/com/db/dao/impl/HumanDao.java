@@ -19,7 +19,7 @@ import com.db.model.impl.HumanEntity;
 public class HumanDao extends BaseDao<HumanEntity>
 {
 	/** 查询语句名称 ： 根据账号ID获取所有 characterInfo */
-	public static final String QUERY_GET_CHARACTERS_BY_PID = "queryCharactersByPid";
+	public static final String QUERY_GET_ALLROLE_BY_PID = "select * from HumanEntity where passportId=:passportId";
 	@Autowired
 	public HumanDao(SessionFactory sessionFactory)
 	{
@@ -32,5 +32,13 @@ public class HumanDao extends BaseDao<HumanEntity>
 		return HumanEntity.class;
 	}
 	
-	
+	/**
+	 * 根据用户id获取全部角色信息
+	 * @param passportId
+	 * @return
+	 */
+	public List<HumanEntity> getHumanAllList(long passportId){
+		List<HumanEntity> humanEntityList= getAll("from HumanEntity", new String[] { "passportId" }, new Object[] { passportId });
+		return humanEntityList;
+	}
 }
