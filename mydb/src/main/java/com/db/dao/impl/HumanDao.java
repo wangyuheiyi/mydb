@@ -38,7 +38,7 @@ public class HumanDao extends BaseDao<HumanEntity>
 	 * @return
 	 */
 	public List<HumanEntity> getHumanAllList(long passportId){
-		List<HumanEntity> humanEntityList= getAll("from HumanEntity", new String[] { "passportId" }, new Object[] { passportId });
+		List<HumanEntity> humanEntityList= getAll(QUERY_GET_ALLROLE_BY_PID, new String[] { "passportId" }, new Object[] { passportId });
 		return humanEntityList;
 	}
 }
