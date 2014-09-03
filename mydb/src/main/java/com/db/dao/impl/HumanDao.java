@@ -19,7 +19,7 @@ import com.db.model.impl.HumanEntity;
 public class HumanDao extends BaseDao<HumanEntity>
 {
 	/** 查询语句名称 ： 根据账号ID获取所有 characterInfo */
-	public static final String QUERY_GET_ALLROLE_BY_PID = "select * from HumanEntity where passportId=:passportId";
+	public static final String QUERY_GET_ALLROLE_BY_PID = "from HumanEntity where passportId=:passportId";
 	@Autowired
 	public HumanDao(SessionFactory sessionFactory)
 	{
