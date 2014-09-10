@@ -60,7 +60,7 @@ public abstract class BaseDao<E extends BaseEntity<?>>
 	 * @param obj
 	 * 
 	 */
-	public Serializable add(E obj)
+	public Serializable save(E obj)
 	{
 		if (obj == null)
 		{
