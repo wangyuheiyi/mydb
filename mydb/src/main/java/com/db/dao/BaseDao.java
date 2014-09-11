@@ -10,7 +10,6 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 
-import com.core.uuid.UUIDType;
 import com.db.model.BaseEntity;
 
 /**
@@ -192,20 +191,6 @@ public abstract class BaseDao<E extends BaseEntity<?>>
 		}
 
 		return currentSession().get(entityClazz, ID);
-	}
-	
-	/**
-	 * 获取最大id
-	 * @param uuidIndex
-	 * @return
-	 */
-	public long getMaxId(int uuidIndex){
-		String getMaxIdHsql="select max(id) from "+UUIDType.valueOf(uuidIndex).getDbBeanName();
-		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery(getMaxIdHsql);
-		if(query.list()==null||query.list().size()==0) return 0L;
-		if(query.list().get(0)==null)return 0L;
-		return Long.parseLong(String.valueOf(query.list().get(0)));
 	}
 
 

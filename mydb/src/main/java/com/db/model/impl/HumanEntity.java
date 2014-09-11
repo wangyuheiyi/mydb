@@ -4,11 +4,9 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.GenericGenerator;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -69,13 +67,7 @@ public class HumanEntity implements BaseEntity<Long>
 	private int guideState;
 	/** 角色类型:0正常角色1竞技场角色其它场景角色 */
 	private int roleKind;
-	/** 技能信息*/
-	private String skillPack;
-	/** 开启功能信息*/
-	private String openFuncPack;
-	/** 开启场景信息*/
-	private String openScenePack;
-	
+
 	/** 上次登陆IP */
 	private String lastLoginIp;
 	/** 上次登陆时间 */
@@ -281,30 +273,6 @@ public class HumanEntity implements BaseEntity<Long>
 		this.roleKind = roleKind;
 	}
 
-	@Column
-	public String getSkillPack() {
-		return skillPack;
-	}
-
-	public void setSkillPack(String skillPack) {
-		this.skillPack = skillPack;
-	}
-	@Column
-	public String getOpenFuncPack() {
-		return openFuncPack;
-	}
-
-	public void setOpenFuncPack(String openFuncPack) {
-		this.openFuncPack = openFuncPack;
-	}
-	@Column
-	public String getOpenScenePack() {
-		return openScenePack;
-	}
-
-	public void setOpenScenePack(String openScenePack) {
-		this.openScenePack = openScenePack;
-	}
 
 	@Column
 	public String getLastLoginIp() {

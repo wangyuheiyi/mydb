@@ -22,6 +22,7 @@ public class TestMain {
 //		humanEntity.setId(id);
 //		dbServer.getHumanDao().getAll("from HumanEntity", null, null);
 		List<HumanEntity> humanEntitys=dbServer.getHumanDao().getHumanAllList(1001);
+		dbServer.getMaxId(0, new String[] { "minId", "maxId" }, new Object[]{(long) 0, (long) 1000L});
 		System.out.println(humanEntitys.size());
 	}
 
