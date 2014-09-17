@@ -35,10 +35,10 @@ public class HumanEntity implements BaseEntity<Long>
 	private int vocationType;
 	/** 等级 */
 	private int level=1;
-	/** 阵营 */
+	/** 种族 */
 	private int allianceTypeId;
-	/** 玩家的战功 */
-	private int exploit;
+	/** 玩家的统治力 */
+	private int control;
 	/** 钻石 */
 	private int diamond;
 	/** 金币 */
@@ -47,12 +47,6 @@ public class HumanEntity implements BaseEntity<Long>
 	private int coupon;
 	/** 当前经验 */
 	private int curExp;
-	/** 当前精力  */
-	private int curVim;
-	/** 最后回复精力的时间  */
-	private long vimLastTime;
-	/** 所在城镇 ID */
-	private int cityId = -1;
 	/** 所在场景Id */
 	private int sceneId;
 	/** 主背包容量 */
@@ -78,8 +72,6 @@ public class HumanEntity implements BaseEntity<Long>
 	private int totalMinute;
 	/** 在线状态 */
 	private int onlineStatus;
-	/** 空闲时间 */
-	private int idleTime;
 	/** 创建时间 */
 	private Timestamp createTime;
 	/** 是否已经被删除 */
@@ -148,18 +140,18 @@ public class HumanEntity implements BaseEntity<Long>
 	public void setAllianceTypeId(int allianceTypeId) {
 		this.allianceTypeId = allianceTypeId;
 	}
-	@Column(columnDefinition = " int default 0", nullable = false)
-	public int getExploit() {
-		return exploit;
-	}
-
-	public void setExploit(int exploit) {
-		this.exploit = exploit;
-	}
-
 	
 	public int getDiamond() {
 		return diamond;
+	}
+
+	@Column(columnDefinition = " int default 0", nullable = false)
+	public int getControl() {
+		return control;
+	}
+
+	public void setControl(int control) {
+		this.control = control;
 	}
 
 	public void setDiamond(int diamond) {
@@ -191,29 +183,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.curExp = value;
 	}
 	
-	public int getCurVim() {
-		return curVim;
-	}
 
-	public void setCurVim(int curVim) {
-		this.curVim = curVim;
-	}
-
-	public long getVimLastTime() {
-		return vimLastTime;
-	}
-
-	public void setVimLastTime(long vimLastTime) {
-		this.vimLastTime = vimLastTime;
-	}
-
-	public int getCityId()
-	{
-		return this.cityId;
-	}
-	public void setCityId(int cityId) {
-		this.cityId = cityId;
-	}
 	@Column(columnDefinition = " int default 0", nullable = false)
 	public int getSceneId() {
 		return sceneId;
@@ -317,14 +287,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.onlineStatus = onlineStatus;
 	}
 
-	@Column(columnDefinition = " int default 0", nullable = false)
-	public int getIdleTime() {
-		return idleTime;
-	}
 
-	public void setIdleTime(int idleTime) {
-		this.idleTime = idleTime;
-	}
 	@Column
 	public Timestamp getCreateTime() {
 		return createTime;
