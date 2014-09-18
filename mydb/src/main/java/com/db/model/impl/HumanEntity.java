@@ -37,8 +37,6 @@ public class HumanEntity implements BaseEntity<Long>
 	private int level=1;
 	/** 种族 */
 	private int allianceTypeId;
-	/** 玩家的统治力 */
-	private int control;
 	/** 钻石 */
 	private int diamond;
 	/** 金币 */
@@ -145,14 +143,6 @@ public class HumanEntity implements BaseEntity<Long>
 		return diamond;
 	}
 
-	@Column(columnDefinition = " int default 0", nullable = false)
-	public int getControl() {
-		return control;
-	}
-
-	public void setControl(int control) {
-		this.control = control;
-	}
 
 	public void setDiamond(int diamond) {
 		this.diamond = diamond;
