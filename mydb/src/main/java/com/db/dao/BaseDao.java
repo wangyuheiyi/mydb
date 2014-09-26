@@ -66,6 +66,7 @@ public abstract class BaseDao<E extends BaseEntity<?>>
 			return null;
 		} else
 		{
+			System.out.println("insert human!!");
 			return currentSession().save(obj);
 		}
 	}
