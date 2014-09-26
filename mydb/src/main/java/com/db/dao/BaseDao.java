@@ -9,6 +9,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.db.model.BaseEntity;
 
@@ -59,6 +61,7 @@ public abstract class BaseDao<E extends BaseEntity<?>>
 	 * @param obj
 	 * 
 	 */
+	
 	public Serializable save(E obj)
 	{
 		if (obj == null)
