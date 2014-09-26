@@ -96,7 +96,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.id = id;
 	}
 	
-
+	@Column(columnDefinition = " int default 0", nullable = false)
 	public long getPassportId() {
 		return passportId;
 	}
