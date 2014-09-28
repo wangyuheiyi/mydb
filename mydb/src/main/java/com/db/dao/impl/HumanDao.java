@@ -45,9 +45,9 @@ public class HumanDao extends BaseDao<HumanEntity>
 		return humanEntityList;
 	}
 	
-	@Transactional(propagation = Propagation.REQUIRED)
-	public Serializable save(HumanEntity obj)
-	{
-		return super.save(obj);
-	}
+//	@Transactional(propagation = Propagation.REQUIRED)
+//	public Serializable save(HumanEntity obj)
+//	{
+//		return super.save(obj);
+//	}
 }

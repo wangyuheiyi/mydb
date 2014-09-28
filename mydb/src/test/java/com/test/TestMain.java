@@ -17,7 +17,7 @@ public class TestMain {
 		HumanEntity humanEntity=new HumanEntity();
 		humanEntity.setId(123123123L);
 		humanEntity.setPassportId(123456);
-		humanEntity.setName("wangyu");
+		humanEntity.setName("wangyu11");
 		dbServer.getHumanDao().save(humanEntity);
 //		humanEntity.setId(id);
 //		dbServer.getHumanDao().getAll("from HumanEntity", null, null);
