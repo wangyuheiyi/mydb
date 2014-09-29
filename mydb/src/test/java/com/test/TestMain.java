@@ -15,9 +15,9 @@ public class TestMain {
 		// TODO Auto-generated method stub
 		DbServer dbServer=ContextFactiry.getContext("dbContext").getBean(DbServer.class);
 		HumanEntity humanEntity=new HumanEntity();
-		humanEntity.setId(123123123L);
+		humanEntity.setId(11111111L);
 		humanEntity.setPassportId(123456);
-		humanEntity.setName("wangyu11");
+		humanEntity.setName("wangyuccc");
 		dbServer.getHumanDao().save(humanEntity);
 //		humanEntity.setId(id);
 //		dbServer.getHumanDao().getAll("from HumanEntity", null, null);

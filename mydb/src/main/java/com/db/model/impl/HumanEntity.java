@@ -114,6 +114,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.name = name;
 	}
 
+	@Column(columnDefinition = " int default 1", nullable = false)
 	public int getVocationType() {
 		return this.vocationType ;
 	}
@@ -122,6 +123,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.vocationType = vocationType;
 	}
 	
+	@Column(columnDefinition = " int default 1", nullable = false)
 	public int getLevel() {
 		return this.level;
 	}
@@ -130,7 +132,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.level = level;
 	}
 	
-
+	@Column(columnDefinition = " int default 1", nullable = false)
 	public int getAllianceTypeId() {
 		return this.allianceTypeId;
 	}
@@ -139,6 +141,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.allianceTypeId = allianceTypeId;
 	}
 	
+	@Column(columnDefinition = " int default 0", nullable = false)
 	public int getDiamond() {
 		return diamond;
 	}
@@ -148,6 +151,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.diamond = diamond;
 	}
 
+	@Column(columnDefinition = " int default 0", nullable = false)
 	public int getGold() {
 		return this.gold;
 	}
@@ -156,7 +160,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.gold = value;
 	}
 
-	
+	@Column(columnDefinition = " int default 0", nullable = false)
 	public int getCoupon() {
 		return this.coupon;
 	}
@@ -165,6 +169,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.coupon = value;
 	}
 	
+	@Column(columnDefinition = " int default 0", nullable = false)
 	public int getCurExp() {
 		return this.curExp;
 	}
@@ -182,7 +187,8 @@ public class HumanEntity implements BaseEntity<Long>
 	public void setSceneId(int sceneId) {
 		this.sceneId = sceneId;
 	}
-	@Column
+	
+	@Column(columnDefinition = " int default 0", nullable = false)
 	public int getPrimBagCount() {
 		return primBagCount;
 	}
@@ -191,7 +197,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.primBagCount = primBagCount;
 	}
 	
-	@Column
+	@Column(columnDefinition = " int default 0", nullable = false)
 	public int getStoryId() {
 		return storyId;
 	}
@@ -199,7 +205,7 @@ public class HumanEntity implements BaseEntity<Long>
 	public void setStoryId(int storyId) {
 		this.storyId = storyId;
 	}
-	@Column
+	@Column(columnDefinition = " int default 0", nullable = false)
 	public int getAvatar() {
 		return avatar;
 	}
@@ -208,7 +214,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.avatar = avatar;
 	}
 	
-	@Column
+	@Column(columnDefinition = " int default 0", nullable = false)
 	public int getGuideId() {
 		return guideId;
 	}
@@ -216,7 +222,7 @@ public class HumanEntity implements BaseEntity<Long>
 	public void setGuideId(int guideId) {
 		this.guideId = guideId;
 	}
-	@Column
+	@Column(columnDefinition = " int default 0", nullable = false)
 	public int getGuideState() {
 		return guideState;
 	}
@@ -224,7 +230,7 @@ public class HumanEntity implements BaseEntity<Long>
 	public void setGuideState(int guideState) {
 		this.guideState = guideState;
 	}
-	@Column
+	@Column(columnDefinition = " int default 0", nullable = false)
 	public int getRoleKind() {
 		return roleKind;
 	}
