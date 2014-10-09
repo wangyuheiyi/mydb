@@ -31,8 +31,6 @@ public class HumanEntity implements BaseEntity<Long>
 	private long passportId;
 	/** 玩家的名字  */
 	private String name;
-	/** 职业类型 */
-	private int vocationType;
 	/** 等级 */
 	private int level=1;
 	/** 种族 */
@@ -51,15 +49,12 @@ public class HumanEntity implements BaseEntity<Long>
 	private int primBagCount;
 	/** 剧情ID */
 	private int storyId;
-	/** 角色的AvatarId */
-	private int avatar;
 	/** 新手引导ID */
 	private int guideId;
 	/** 新手引导状态 */
 	private int guideState;
 	/** 角色类型:0正常角色1竞技场角色其它场景角色 */
 	private int roleKind;
-
 	/** 上次登陆IP */
 	private String lastLoginIp;
 	/** 上次登陆时间 */
@@ -114,14 +109,6 @@ public class HumanEntity implements BaseEntity<Long>
 		this.name = name;
 	}
 
-	@Column(columnDefinition = " int default 1", nullable = false)
-	public int getVocationType() {
-		return this.vocationType ;
-	}
-
-	public void setVocationType(int vocationType) {
-		this.vocationType = vocationType;
-	}
 	
 	@Column(columnDefinition = " int default 1", nullable = false)
 	public int getLevel() {
@@ -204,14 +191,6 @@ public class HumanEntity implements BaseEntity<Long>
 
 	public void setStoryId(int storyId) {
 		this.storyId = storyId;
-	}
-	@Column(columnDefinition = " int default 0", nullable = false)
-	public int getAvatar() {
-		return avatar;
-	}
-
-	public void setAvatar(int avatar) {
-		this.avatar = avatar;
 	}
 	
 	@Column(columnDefinition = " int default 0", nullable = false)
