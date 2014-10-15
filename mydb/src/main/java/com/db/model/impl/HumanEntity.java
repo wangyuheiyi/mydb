@@ -31,6 +31,8 @@ public class HumanEntity implements BaseEntity<Long>
 	private long passportId;
 	/** 玩家的名字  */
 	private String name;
+	/** 玩家模板id*/
+	private int templateId;
 	/** 等级 */
 	private int level=1;
 	/** 种族 */
@@ -108,8 +110,16 @@ public class HumanEntity implements BaseEntity<Long>
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	
+	@Column(columnDefinition = " int default 0", nullable = false)
+	public int getTemplateId() {
+		return templateId;
+	}
+
+	public void setTemplateId(int templateId) {
+		this.templateId = templateId;
+	}
+
 	@Column(columnDefinition = " int default 1", nullable = false)
 	public int getLevel() {
 		return this.level;

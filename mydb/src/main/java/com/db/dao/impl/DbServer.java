@@ -20,6 +20,9 @@ public class DbServer{
 	@Autowired
 	private HumanDao humanDao;
 	
+	@Autowired
+	private HeroDao heroDao;
+	
 
 	public HumanDao getHumanDao() {
 		return humanDao;
@@ -27,6 +30,12 @@ public class DbServer{
 
 	
 	
+	public HeroDao getHeroDao() {
+		return heroDao;
+	}
+
+
+
 	/**
 	 * 获取最大id
 	 * @param uuidIndex
