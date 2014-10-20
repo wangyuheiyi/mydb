@@ -21,7 +21,7 @@ import com.db.model.BaseEntity;
 @Scope("prototype")
 @Component
 @Entity
-@Table(name = "t_hero_info")
+@Table(name = "t_build_info")
 public class BuildEntity implements BaseEntity<Long>
 {
 	private static final long serialVersionUID = 1L;

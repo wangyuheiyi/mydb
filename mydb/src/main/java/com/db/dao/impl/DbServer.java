@@ -23,6 +23,9 @@ public class DbServer{
 	@Autowired
 	private HeroDao heroDao;
 	
+	@Autowired
+	private BuildDao buildDao;
+	
 
 	public HumanDao getHumanDao() {
 		return humanDao;
@@ -32,6 +35,12 @@ public class DbServer{
 	
 	public HeroDao getHeroDao() {
 		return heroDao;
+	}
+
+
+
+	public BuildDao getBuildDao() {
+		return buildDao;
 	}
 
 
