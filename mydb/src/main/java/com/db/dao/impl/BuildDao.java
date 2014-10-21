@@ -38,12 +38,9 @@ public class BuildDao extends BaseDao<BuildEntity>
 	 * @return
 	 */
 	@Transactional(propagation = Propagation.REQUIRED)
-	public BuildEntity getBuildEntity(long charId){
+	public List<BuildEntity> getBuildEntity(long charId){
 		List<BuildEntity> buildEntityList= getAll(QUERY_GET_BUILD_BY_CHARID, new String[] { "charId" }, new Object[] { charId });
-		if(buildEntityList!=null&&buildEntityList.size()!=0)
-			return buildEntityList.get(0);
-		else
-			return null;
+		return buildEntityList;
 	}
 	
 }

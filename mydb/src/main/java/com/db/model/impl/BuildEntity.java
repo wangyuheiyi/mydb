@@ -26,22 +26,22 @@ public class BuildEntity implements BaseEntity<Long>
 {
 	private static final long serialVersionUID = 1L;
 
-	/** 英雄ID 主键 */
+	/** 建筑ID 主键 */
 	private long id;
 	/** 所属角色ID */
 	private long charId;
-	/** 木材资源*/
-	private int wood;
-	/** 石头资源*/
-	private int stone;
-	/** 水晶资源*/
-	private int crystal;
-	/** 特殊资源*/
-	private int special;
-	/** 玩家建筑列表*/
-	private String buildPack;
-	/** 正在建筑列表*/
-	private String buildIngPack;
+	
+	/** 玩家模板id*/
+	private int templateId;
+	
+	/** 是否建筑完成*/
+	private int isFinish;
+	
+	/** 产出的最后时间*/
+	private long outPutTime;
+	/** 开始建筑时间*/
+	private long buildStartTime;
+	
 	/** 创建时间 */
 	private Timestamp createTime;
 	/** 是否已经被删除 */
@@ -105,62 +105,42 @@ public class BuildEntity implements BaseEntity<Long>
 		this.charId = charId;
 	}
 
+	
 	@Column
-	public int getWood() {
-		return wood;
+	public int getIsFinish() {
+		return isFinish;
 	}
 
-	public void setWood(int wood) {
-		this.wood = wood;
-	}
-
-	@Column
-	public int getStone() {
-		return stone;
-	}
-
-	public void setStone(int stone) {
-		this.stone = stone;
+	public void setIsFinish(int isFinish) {
+		this.isFinish = isFinish;
 	}
 
 	@Column
-	public int getCrystal() {
-		return crystal;
+	public long getOutPutTime() {
+		return outPutTime;
 	}
 
-	public void setCrystal(int crystal) {
-		this.crystal = crystal;
-	}
-
-	@Type(type="text")
-	@Column
-	public String getBuildPack() {
-		return buildPack;
-	}
-
-	public void setBuildPack(String buildPack) {
-		this.buildPack = buildPack;
-	}
-
-	@Type(type="text")
-	@Column
-	public String getBuildIngPack() {
-		return buildIngPack;
-	}
-
-	public void setBuildIngPack(String buildIngPack) {
-		this.buildIngPack = buildIngPack;
+	public void setOutPutTime(long outPutTime) {
+		this.outPutTime = outPutTime;
 	}
 
 	@Column
-	public int getSpecial() {
-		return special;
+	public long getBuildStartTime() {
+		return buildStartTime;
 	}
 
-	public void setSpecial(int special) {
-		this.special = special;
+	public void setBuildStartTime(long buildStartTime) {
+		this.buildStartTime = buildStartTime;
 	}
 
+	@Column
+	public int getTemplateId() {
+		return templateId;
+	}
+
+	public void setTemplateId(int templateId) {
+		this.templateId = templateId;
+	}
 	
 	
 }

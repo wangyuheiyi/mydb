@@ -43,6 +43,14 @@ public class HumanEntity implements BaseEntity<Long>
 	private int gold;
 	/** 点券 */
 	private int coupon;
+	/** 木材资源*/
+	private int wood;
+	/** 石头资源*/
+	private int stone;
+	/** 水晶资源*/
+	private int crystal;
+	/** 特殊资源*/
+	private int special;
 	/** 当前经验 */
 	private int curExp;
 	/** 所在场景Id */
@@ -300,5 +308,39 @@ public class HumanEntity implements BaseEntity<Long>
 		this.deleteTime = deleteTime;
 	}
 
+	@Column
+	public int getWood() {
+		return wood;
+	}
 
+	public void setWood(int wood) {
+		this.wood = wood;
+	}
+
+	@Column
+	public int getStone() {
+		return stone;
+	}
+
+	public void setStone(int stone) {
+		this.stone = stone;
+	}
+
+	@Column
+	public int getCrystal() {
+		return crystal;
+	}
+
+	public void setCrystal(int crystal) {
+		this.crystal = crystal;
+	}
+	
+	@Column
+	public int getSpecial() {
+		return special;
+	}
+
+	public void setSpecial(int special) {
+		this.special = special;
+	}
 }
