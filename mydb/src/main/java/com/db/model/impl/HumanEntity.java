@@ -308,7 +308,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.deleteTime = deleteTime;
 	}
 
-	@Column
+	@Column(columnDefinition = " int default 0", nullable = false)
 	public int getWood() {
 		return wood;
 	}
@@ -317,7 +317,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.wood = wood;
 	}
 
-	@Column
+	@Column(columnDefinition = " int default 0", nullable = false)
 	public int getStone() {
 		return stone;
 	}
@@ -326,7 +326,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.stone = stone;
 	}
 
-	@Column
+	@Column(columnDefinition = " int default 0", nullable = false)
 	public int getCrystal() {
 		return crystal;
 	}
@@ -335,7 +335,7 @@ public class HumanEntity implements BaseEntity<Long>
 		this.crystal = crystal;
 	}
 	
-	@Column
+	@Column(columnDefinition = " int default 0", nullable = false)
 	public int getSpecial() {
 		return special;
 	}

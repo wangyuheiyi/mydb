@@ -38,6 +38,10 @@ public class HeroEntity implements BaseEntity<Long>
 	private int curExp;
 	/** 英雄装备列表*/
 	private String equipPack;
+	/** 英雄魔法列表*/
+	private String magicPack;
+	/** 英雄率领的部队列表*/
+	private String monsterPack;
 	/** 创建时间 */
 	private Timestamp createTime;
 	/** 是否已经被删除 */
@@ -136,6 +140,26 @@ public class HeroEntity implements BaseEntity<Long>
 
 	public void setEquipPack(String equipPack) {
 		this.equipPack = equipPack;
+	}
+
+	@Type(type="text")
+	@Column
+	public String getMagicPack() {
+		return magicPack;
+	}
+
+	public void setMagicPack(String magicPack) {
+		this.magicPack = magicPack;
+	}
+
+	@Type(type="text")
+	@Column
+	public String getMonsterPack() {
+		return monsterPack;
+	}
+
+	public void setMonsterPack(String monsterPack) {
+		this.monsterPack = monsterPack;
 	}
 
 	
